@@ -3,6 +3,7 @@ package com.example.veterinariaapi.repositorio
 import com.example.veterinariaapi.Network.PetsApi
 import com.example.veterinariaapi.Network.RetrofitClient
 import com.parcialii.dumi.dataClass.Pet
+import retrofit2.Response
 
 class repoPet {
     private val petApi: PetsApi = RetrofitClient.petsApi
@@ -11,7 +12,7 @@ class repoPet {
         return petApi.getPets(sortBy, type, breed, age, name)
     }
 
-    suspend fun  savePet(pet: Pet) : Pet {
-        return petApi.save(pet)
+    suspend fun  savePet(pet: Pet) : Response<Void> {
+        return petApi.savePet(pet)
     }
 }

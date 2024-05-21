@@ -1,5 +1,6 @@
 package com.example.veterinariaapi.Network
 import com.parcialii.dumi.dataClass.Pet
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -16,5 +17,5 @@ interface PetsApi {
         ): List<Pet>
 
         @POST("/pets")
-        suspend fun save(@Body pet: Pet): Pet
+        suspend fun savePet(@Body pet: Pet): Response<Void>
 }
