@@ -110,8 +110,8 @@ fun MainMenuBodyContent(navController: NavController, pets: List<Pet>) {
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                //val filteredElements = countries.filter { it.contains(query, true) }
-                //PetList(navController = navController, AppScreens.ViewPet.route, filteredElements)
+                val filteredPets = pets.filter { it.name.contains(query, true) }
+                PetList(navController = navController, AppScreens.ViewPet.route, filteredPets)
             }
         }
 
