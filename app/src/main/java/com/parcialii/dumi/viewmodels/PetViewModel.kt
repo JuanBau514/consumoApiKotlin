@@ -8,6 +8,7 @@ import com.example.veterinariaapi.repositorio.repoPet
 import com.parcialii.dumi.dataClass.Pet
 import kotlinx.coroutines.launch
 
+var valueCB = "type"
 class PetViewModel : ViewModel() {
     private val repositorioMascotas = repoPet()
 
@@ -20,8 +21,14 @@ class PetViewModel : ViewModel() {
 
     fun loadMascotas() {
         viewModelScope.launch {
-            val pets = repositorioMascotas.getPets()
+            val pets = repositorioMascotas.getPets(sortBy= valueCB, type = null, breed=null, age = null, name= null)
             liveDataMascotas.value = pets
+        }
+    }
+
+    fun savePet(pet: Pet){
+        viewModelScope.launch {
+            repositorioMascotas.savePet(pet)
         }
     }
 }

@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -39,7 +40,8 @@ fun ViewPetBodyContent(navController: NavController) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Pet name",
+        Text(
+            petName,
             style = TextStyle(
                 fontSize = 50.sp
             )
@@ -57,15 +59,26 @@ fun ViewPetBodyContent(navController: NavController) {
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        Text("Age")
+        Row {
+            Text("Age: ")
+            Text(petAge)
+        }
+
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        Text("Type pet")
+        Row {
+            Text("Type pet: ")
+            Text(petType)
+        }
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        Text("Breed")
+        Row {
+            Text("Breed: ")
+            Text(petBreed)
+        }
+
 
         Spacer(modifier = Modifier.height(30.dp))
 

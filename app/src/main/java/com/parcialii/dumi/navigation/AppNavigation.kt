@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.films.viewmodels.PetViewModel
 import com.parcialii.dumi.dataClass.Pet
 import com.parcialii.dumi.screens.AddPet
 import com.parcialii.dumi.screens.MainMenu
@@ -17,7 +18,7 @@ fun AppNavigation(pets: List<Pet>) {
             MainMenu(navController, pets)
         }
         composable(route = AppScreens.AddPet.route) {
-            AddPet(navController)
+            AddPet(navController, PetViewModel())
         }
         composable(route = AppScreens.ViewPet.route) {
             ViewPet(navController)

@@ -7,7 +7,11 @@ import com.parcialii.dumi.dataClass.Pet
 class repoPet {
     private val petApi: PetsApi = RetrofitClient.petsApi
 
-    suspend fun getPets() : List<Pet> {
-        return petApi.getPets()
+    suspend fun getPets(sortBy: String?, type: String?, breed: String?, age: Int?, name: String?) : List<Pet> {
+        return petApi.getPets(sortBy, type, breed, age, name)
+    }
+
+    suspend fun  savePet(pet: Pet) : Pet {
+        return petApi.save(pet)
     }
 }
