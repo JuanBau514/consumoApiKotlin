@@ -7,7 +7,10 @@ import androidx.activity.viewModels
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import com.example.films.viewmodels.PetViewModel
+import com.parcialii.dumi.navigation.AppNavigation
 import com.ud.films.views.composable.petsList
+
+
 
 class MainActivity : ComponentActivity() {
     private val petViewModel: PetViewModel by viewModels()
@@ -16,7 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val pets by petViewModel.mascotas.observeAsState(emptyList())
-            petsList(pets = pets)
+            AppNavigation(pets)
         }
     }
 }
