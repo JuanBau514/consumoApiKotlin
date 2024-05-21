@@ -4,9 +4,9 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface PetsApi {
-        @GET("pets")
+        @GET("/pets")
         suspend fun getPets(): List<Pet>
 
-        @POST("pets")
+        @POST("/pets")
         suspend fun save(): Pet
 }
